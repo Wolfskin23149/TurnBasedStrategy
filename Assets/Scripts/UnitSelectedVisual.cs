@@ -29,6 +29,8 @@ public class UnitSelectedVisual : MonoBehaviour
     //如果不把 UpdateVisual();放在Update()，就無法正確啟動，感覺是Start()的問題
     private void Update()
     {
+        //UpdateVisual();
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             UpdateVisual();
@@ -45,7 +47,7 @@ public class UnitSelectedVisual : MonoBehaviour
     private void UpdateVisual()
     {
         // 檢查當前選擇的單位是否等於這個腳本指定的單位
-        if (UnitActionSystem.Instance.GetSelectedUnit() == unit)
+        if (UnitActionSystem.Instance.GetSelectedUnit() == unit) 
         {
             meshRenderer.enabled = true;  // 啟用 Mesh 渲染器，顯示該單位
             Debug.Log("啟用 Mesh 渲染器，顯示該單位");

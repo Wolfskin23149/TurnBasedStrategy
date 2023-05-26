@@ -36,16 +36,6 @@ public class UnitActionSystem : MonoBehaviour
             
             Debug.Log("Start_TryHandleUnitSelection");
 
-            /*AI add
-            if (selectedUnit != null && selectedUnit.GetMoveAction() != null)
-            {
-                if (selectedUnit.GetMoveAction().IsValidActionGridPosition(mouseGridPosition))
-                {
-                    selectedUnit.GetMoveAction().Move(mouseGridPosition);
-                }
-            }
-            AI add*/
-
             if  (selectedUnit.GetMoveAction().IsValidActionGridPosition(mouseGridPosition))
             {
                 selectedUnit.GetMoveAction().Move(mouseGridPosition);
@@ -53,6 +43,10 @@ public class UnitActionSystem : MonoBehaviour
 
             
             //selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition());  
+        }
+        if(Input.GetMouseButtonDown(1))
+        {
+            selectedUnit.GetSpinAction().Spin();   
         }
     }
 
@@ -77,13 +71,14 @@ public class UnitActionSystem : MonoBehaviour
     {
         selectedUnit = unit;
         
-        OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
+        //OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
         
         //這一段等於上一段，但更加精簡
-        /*if(OnSelectedUnitChanged != null)
+        if(OnSelectedUnitChanged != null)
         {
+            Debug.Log("OnSelectedUnitChanged");
             OnSelectedUnitChanged(this, EventArgs.Empty);
-        }*/
+        }
          
     }
     public Unit GetSelectedUnit()

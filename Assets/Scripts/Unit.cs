@@ -7,10 +7,12 @@ public class Unit : MonoBehaviour
     private GridPosition gridPosition; // 儲存單位的網格位置
     
     private MoveAction moveAction; // 單位的移動行為
+    private SpinAction spinAction; 
 
     private void Awake()
     {
         moveAction = GetComponent<MoveAction>(); // 獲取移動行為組件
+        spinAction = GetComponent<SpinAction>();
     }
 
     private void Start()
@@ -33,6 +35,11 @@ public class Unit : MonoBehaviour
     public MoveAction GetMoveAction()
     {
         return moveAction; // 返回單位的移動行為
+    }
+
+    public SpinAction GetSpinAction()
+    {
+        return spinAction; 
     }
 
     public GridPosition GetGridPosition()
