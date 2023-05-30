@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,7 @@ public class MoveAction : BaseAction
         {
             unitAnimator.SetBool("IsWalking", false); // 設定動畫參數，停止播放行走動畫
             isActive = false;
+            onActionComplete();
         }
 
 
@@ -44,8 +46,9 @@ public class MoveAction : BaseAction
         transform.forward = Vector3.Lerp(transform.forward, moveDirection, Time.deltaTime * rotateSpeed); // 使物體朝向移動方向
     }
     
-    public void Move(GridPosition gridPosition)
+    public void Move(GridPosition gridPosition, Action onActionComplete )
     {
+        this.onActionComplete = onActionComplete;
         this.targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition); // 將傳入的目標位置設定為新的目標位置
         isActive = true;
     }

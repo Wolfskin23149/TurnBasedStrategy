@@ -29,12 +29,12 @@ public class UnitSelectedVisual : MonoBehaviour
     //如果不把 UpdateVisual();放在Update()，就無法正確啟動，感覺是Start()的問題
     private void Update()
     {
-        //UpdateVisual();
+        UpdateVisual();
 
-        if (Input.GetKeyDown(KeyCode.V))
+        /*if (Input.GetKeyDown(KeyCode.V))
         {
             UpdateVisual();
-        }
+        }*/
     }
 
 
