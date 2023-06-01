@@ -50,12 +50,12 @@ public class UnitSelectedVisual : MonoBehaviour
         if (UnitActionSystem.Instance.GetSelectedUnit() == unit) 
         {
             meshRenderer.enabled = true;  // 啟用 Mesh 渲染器，顯示該單位
-            Debug.Log("啟用 Mesh 渲染器，顯示該單位");
+            //Debug.Log("啟用 Mesh 渲染器，顯示該單位");
         }
         else 
         {
             meshRenderer.enabled = false;  // 禁用 Mesh 渲染器，隱藏該單位
-            Debug.Log("禁用 Mesh 渲染器，隱藏該單位");
+            //Debug.Log("禁用 Mesh 渲染器，隱藏該單位");
         }
     }
     
